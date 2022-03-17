@@ -1,0 +1,23 @@
+.inputGroup {
+    border: 1px solid #bdbdbd;
+    padding: 1rem;
+    .inputLabel {
+      .icon {
+        color: red;
+      }
+    }
+    .taskForm {
+      display: flex;
+      .taskInput {
+        width: 70%;
+        margin-right: 0.5rem;
+      }
+      .taskInputBtn {
+        background: #bdbdbd;
+        border: none;
+        width: 30%;
+        height: 2.375rem;
+        color: black;
+      }
+    }
+  }

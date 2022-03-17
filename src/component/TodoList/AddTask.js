@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import Swal from "sweetalert2";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button,Spinner } from "react-bootstrap";
 
 //context
 import { useTodoList } from "../../context/todolist";
@@ -9,33 +8,20 @@ function AddTask() {
   const { todoListData, setTodoListData } = useTodoList();
   const [validated, setValidated] = useState(false);
   const [newTaskContent, setNewTaskContent] = useState("");
-  // const [finished, setFinished] = useState(false);
 
-  //新增待辦事項
-  const addTask = () => {
+  const handleChange = (e) => {
+    setNewTaskContent(e.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+    //新增待辦事項
     if (newTaskContent!=="") {
-      //加入待辦事項alert
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-end",
-        showConfirmButton: false,
-        timer: 5000,
-        timerProgressBar: false,
-        didOpen: (toast) => {
-          toast.addEventListener("mouseenter", Swal.stopTimer);
-          toast.addEventListener("mouseleave", Swal.resumeTimer);
-        },
-      });
-
-      Toast.fire({
-        icon: "success",
-        title: "已新增待辦事項",
-        customClass: {
-          popup: "c-alert__toast",
-          title: "c-alert__subtitle",
-        },
-      });
-
       const newTask = {
         id: Date.now(),
         content: newTaskContent,
@@ -53,19 +39,6 @@ function AddTask() {
         localStorage.setItem("todoList", JSON.stringify([newTask]));
       }
     }
-  };
-
-  const handleChange = (e) => {
-    setNewTaskContent(e.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    setValidated(true);
   };
 
   return (
@@ -96,7 +69,7 @@ function AddTask() {
               尚未填寫待辦事項
             </Form.Control.Feedback>
           </Form.Group>
-          <Button className="taskInputBtn" type="submit" onClick={addTask}>
+            <Button className="taskInputBtn" type="submit">
             送出
           </Button>
         </Form>

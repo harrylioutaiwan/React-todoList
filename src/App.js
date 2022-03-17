@@ -3,8 +3,6 @@ import TodoList from "./component/TodoList/TodoList";
 
 import { todoListContext } from "./context/todolist";
 
-import "./App.scss";
-
 function App() {
   const [todoListData, setTodoListData] = useState([]);
   useEffect(() => {

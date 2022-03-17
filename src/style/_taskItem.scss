@@ -1,39 +1,6 @@
-/* bootstrap */
-@import "~bootstrap/scss/bootstrap.scss";
-
-//TodoList
-.container {
-  margin-top: 5vh;
-}
-
-//AddTask
-.inputGroup {
-  border: 1px solid #bdbdbd;
-  padding: 1rem;
-  .inputLabel {
-    .icon {
-      color: red;
-    }
-  }
-  .taskForm {
-    display: flex;
-    .taskInput {
-      width: 70%;
-      margin-right: 0.5rem;
-    }
-    .taskInputBtn {
-      background: #bdbdbd;
-      border: none;
-      width: 30%;
-      height: 2.375rem;
-    }
-  }
-}
-
-//TaskItem
 .unFinishedTaskItem {
   display: flex;
-  transition: .5s;
+  transition: $transition;
   .taskItemInput {
     width: 80%;
   }
@@ -56,7 +23,7 @@
 
 .finishedTaskItem {
   display: flex;
-  transition: .5s;
+  transition: $transition;
   .taskItemInput {
     width: 80%;
     color: #bdbdbd;

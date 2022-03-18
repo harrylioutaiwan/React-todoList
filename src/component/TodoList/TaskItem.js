@@ -28,14 +28,6 @@ function TaskItem(props) {
       buttonsStyling: false,
       focusCancel: false,
       focusConfirm: false,
-      customClass: {
-        container: "c-alert__overlay",
-        popup: "c-alert__modal",
-        title: "c-alert__title",
-        htmlContainer: "c-alert__text",
-        confirmButton: "",
-        cancelButton: "",
-      },
     }).then((result) => {
       if (result.isConfirmed) {
         //移除Task、更新localStorage的value
@@ -61,14 +53,6 @@ function TaskItem(props) {
       buttonsStyling: false,
       focusCancel: false,
       focusConfirm: false,
-      customClass: {
-        container: "c-alert__overlay",
-        popup: "c-alert__modal",
-        title: "c-alert__title",
-        htmlContainer: "c-alert__text",
-        confirmButton: "",
-        cancelButton: "",
-      },
     }).then((result) => {
       if (result.isConfirmed) {
         //找到相同id物件的index

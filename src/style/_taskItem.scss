@@ -1,6 +1,5 @@
 .unFinishedTaskItem {
   display: flex;
-  transition: $transition;
   .taskItemInput {
     width: 80%;
   }
@@ -11,19 +10,20 @@
     border: none;
     text-align: center;
     margin-right: 0.5rem;
+    border-radius: 0.25rem;
   }
   .finishedBtn {
-    font-size: rem;
+    font-size: 1rem;
     width: 10%;
     background: #bdbdbd;
     border: none;
     text-align: center;
+    border-radius: 0.25rem;
   }
 }
 
 .finishedTaskItem {
   display: flex;
-  transition: $transition;
   .taskItemInput {
     width: 80%;
     color: #bdbdbd;
@@ -32,5 +32,25 @@
     color: #bdbdbd;
     width: 20%;
     text-align: end;
+  }
+}
+
+.swal2-actions {
+  .swal2-cancel {
+    font-size: 1rem;
+    background: #bdbdbd;
+    border: none;
+    text-align: center;
+    border-radius: 0.25rem;
+    margin-right: 1rem;
+    padding: 0.25rem 1rem;
+  }
+  .swal2-confirm {
+    font-size: 1rem;
+    background: #bdbdbd;
+    border: none;
+    text-align: center;
+    border-radius: 0.25rem;
+    padding: 0.25rem 1rem;
   }
 }
